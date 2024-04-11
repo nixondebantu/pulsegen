@@ -2,11 +2,12 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import React, { useState } from "react";
 import Doctor from "./Doctor";
+import { BACKEND_URL } from "../../Const";
 
 export default function Specialists() {
   const [Doctors, setDoctors] = useState([]);
 
-  fetch('http://localhost:5000/user/doctor')
+  fetch(`${BACKEND_URL}/user/doctor`)
   .then(res=> res.json())
   .then(data=>{
     setDoctors(data);
